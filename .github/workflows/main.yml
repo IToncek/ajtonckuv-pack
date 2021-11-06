@@ -5,15 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Archive Release
-      uses: thedoctor0/zip-release@master
+    - name: Compress
+      uses: TonyBogdanov/zip@1.0
       with:
-        type: 'zip'
-        filename: 'release.zip'
-        exclusions: '*.git*'
-    - name: Upload Release
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: "release.zip"
-        token: ${{ secrets.GITHUB_TOKEN }}
+          args: zip -qq -r ./archive.zip ./target
+
 
