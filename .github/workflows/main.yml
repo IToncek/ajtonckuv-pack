@@ -8,6 +8,6 @@ jobs:
     - name: Compress
       uses: TonyBogdanov/zip@1.0
       with:
-          args: zip -qq -r ./archive.zip ./target
+          args: zip -qq -r ./archive.zip -i ./
 
 
